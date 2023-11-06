@@ -8,17 +8,20 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
+import { Kobe, LeBron, Jordan } from "./Componenets.jsx";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
-]);
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<App />}>
+      <Route path="/kobe-bryant" element={<Kobe />} />
+      <Route path="/michael-jordan" element={<Jordan />} />
+      <Route path="/lebron-james" element={<LeBron />} />
+    </Route>
+  )
+);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
-    {/* <RouterProvider router={router} /> */}
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
