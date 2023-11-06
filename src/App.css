@@ -17,3 +17,30 @@
   margin-bottom: 100px;
   z-index: -1;
 }
+
+.jordanBackgroundImage {
+  background-image: url(https://img.bleacherreport.net/img/images/photos/002/936/935/hi-res-eeb229e296ddb701be5c889a1d693762_crop_north.jpg?1402782251&w=3072&h=2048);
+  height: 60vh;
+  background-size: cover;
+  width: 100vh;
+  margin-bottom: 50px;
+  z-index: -1;
+}
+
+.lebronBackgroundImage {
+  background-image: url(https://library.sportingnews.com/2021-08/lebron-james-dunks-against-the-houston-rockets_1dhr67o0nxqon1rrueli8yt3y9.jpg);
+  height: 60vh;
+  background-size: cover;
+  width: 100vh;
+  margin-bottom: 50px;
+  z-index: -1;
+}
+
+.kobeBackgroundImage {
+  background-image: url(https://publish.one37pm.net/wp-content/uploads/2022/08/GettyImages-139369178.jpg?fit=680%2C456);
+  height: 60vh;
+  background-size: cover;
+  width: 100vh;
+  margin-bottom: 50px;
+  z-index: -1;
+}
