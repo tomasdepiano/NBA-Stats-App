@@ -15,24 +15,24 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route
-        path="/kobebryant/:id"
+        path="/kobebryant"
         element={<Kobe />}
         loader={(request) => {
-          return playerData[request.params.id];
+          return playerData[3];
         }}
       />
       <Route
-        path="/michaeljordan/:id"
+        path="/michaeljordan"
         element={<Jordan />}
         loader={(request) => {
-          return playerData[request.params.id];
+          return playerData[1];
         }}
       />
       <Route
-        path="/lebronjames/:id"
+        path="/lebronjames"
         element={<LeBron />}
         loader={(request) => {
-          return playerData[request.params.id];
+          return playerData[2];
         }}
       />
     </Route>

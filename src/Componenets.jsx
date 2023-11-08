@@ -24,17 +24,8 @@ export function Jordan() {
 }
 
 export function LeBron() {
-  const {
-    name,
-    pts,
-    trb,
-    ast,
-    fgpercent,
-    fg3point,
-    freethrowpercent,
-    champs,
-    URL,
-  } = useLoaderData();
+  const { name, pts, trb, ast, fgpercent, fg3point, freethrowpercent, champs } =
+    useLoaderData();
   return (
     <div>
       <div className="lebronBackgroundImage">
@@ -55,17 +46,8 @@ export function LeBron() {
 }
 
 export function Kobe() {
-  const {
-    name,
-    pts,
-    trb,
-    ast,
-    fgpercent,
-    fg3point,
-    freethrowpercent,
-    champs,
-    URL,
-  } = useLoaderData();
+  const { name, pts, trb, ast, fgpercent, fg3point, freethrowpercent, champs } =
+    useLoaderData();
   return (
     <div>
       <div className="kobeBackgroundImage">
