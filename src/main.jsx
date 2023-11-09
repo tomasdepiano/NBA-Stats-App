@@ -9,7 +9,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { Kobe, LeBron, Jordan } from "./Componenets.jsx";
-import playerData from "./Player Data/Stats.js";
+import playerData from "./playerData/Stats.js";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,21 +18,21 @@ const router = createBrowserRouter(
         path="/kobebryant"
         element={<Kobe />}
         loader={(request) => {
-          return playerData[3];
+          return playerData[2];
         }}
       />
       <Route
         path="/michaeljordan"
         element={<Jordan />}
         loader={(request) => {
-          return playerData[1];
+          return playerData[0];
         }}
       />
       <Route
         path="/lebronjames"
         element={<LeBron />}
         loader={(request) => {
-          return playerData[2];
+          return playerData[1];
         }}
       />
     </Route>

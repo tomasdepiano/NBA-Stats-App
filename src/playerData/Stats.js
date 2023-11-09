@@ -1,5 +1,5 @@
-const playerData = {
-  1: {
+const playerData = [
+  {
     name: "Michael Jordan",
     pts: "30.1",
     trb: "6.2",
@@ -9,7 +9,7 @@ const playerData = {
     freethrowpercent: "83.5%",
     champs: "6",
   },
-  2: {
+  {
     name: "LeBron James",
     pts: "27.2",
     trb: "7.5",
@@ -19,7 +19,7 @@ const playerData = {
     freethrowpercent: "73.5%",
     champs: "4",
   },
-  3: {
+  {
     name: "Kobe Bryant",
     pts: "25.0",
     trb: "5.2",
@@ -29,6 +29,6 @@ const playerData = {
     freethrowpercent: "83.7%",
     champs: "5",
   },
-};
+];
 
 export default playerData;

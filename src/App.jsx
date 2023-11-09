@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./App.css";
 import { Outlet, useNavigate } from "react-router-dom";
+import { Modal, Removemodal } from "./modals";
+import playerData from "./playerData/Stats";
 
 function App() {
   const navigate = useNavigate();
@@ -10,6 +12,15 @@ function App() {
   const handleDropdownChange = (event) => {
     setSelectedPlayer(event.target.value);
   };
+
+  const [openModal, setOpenModal] = useState(false);
+  const [removeModal, setRemovalModal] = useState(false);
+  const [players, setPlayers] = useState(playerData);
+  console.log(players);
+
+  function addNewPlayers(name, pts) {
+    setPlayers([...players, { name, pts }]);
+  }
 
   const path = window.location.pathname;
 
@@ -41,8 +52,28 @@ function App() {
             </button>
           </form>
           <div className="btn-group">
-            <button type="submit">Add a Player</button>
-            <button type="submit">Remove a Player</button>
+            <button
+              className="openModalBtn"
+              onClick={() => {
+                setOpenModal(true);
+              }}
+              type="submit"
+            >
+              Add a Player
+            </button>
+            {openModal && (
+              <Modal closeModal={setOpenModal} addPlayers={addNewPlayers} />
+            )}
+            <button
+              className="openModalBtn"
+              onClick={() => {
+                setRemovalModal(true);
+              }}
+              type="submit"
+            >
+              Remove a Player
+            </button>
+            {removeModal && <Removemodal closeModal={setRemovalModal} />}
           </div>
         </div>
       )}
