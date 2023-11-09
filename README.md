@@ -43,8 +43,8 @@ This app allows you to look at the career statics for either Michael Jordan, LeB
 &NewLine;
 
 ```sh
-Frontend – React, CSS
-Backend – Node, Express,
+Frontend – React, CSS, HTML
+Backend – Node, Express
 ```
 
 &NewLine;
@@ -57,9 +57,11 @@ Backend – Node, Express,
 
 <!-- This is how you make a table -->
 
-|                                                  |                                                                    |     |
-| ------------------------------------------------ | ------------------------------------------------------------------ | --- |
-| [express](https://www.npmjs.com/package/express) | [react-router-dom](https://www.npmjs.com/package/react-router-dom) |
+|                                                       |                                                                    |     |
+| ----------------------------------------------------- | ------------------------------------------------------------------ | --- |
+| [express](https://www.npmjs.com/package/express)      | [react-router-dom](https://www.npmjs.com/package/react-router-dom) |
+| [vite-express](https://www.npmjs.com/package/express) |
+| [morgan](https://www.npmjs.com/package/express)       |
 
 &NewLine;
 &NewLine;
@@ -95,11 +97,11 @@ Why I liked it an how it works
 
 ### Bugs
 
-We're all learning! You can list any issues the app may have, why you think it's happening, and how you might fix it
+One bug that I couldn't figure out is when you click on "Edit a Player" or "Remove a Player" the modals don't show up on the center on the screen but on the left side of the page.
 
 ### Future Development
 
-I would like to add a clip of each player most famous highlight on this app at some point.
+I would like to add a clip of each player most famous highlight on this app at some point and fix the bug with the modals not showing up on the center of the screen.
 
 ### Contact
 
