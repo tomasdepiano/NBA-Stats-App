@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./modals.css";
 
-export function Modal({ closeModal }) {
+export function Modal({ closeModal, addPlayers }) {
+  const [name, setName] = useState("");
+  const [points, setPoints] = useState("");
   return (
     <div className="modalbackground">
       <div className="modalContainer">
@@ -17,13 +19,22 @@ export function Modal({ closeModal }) {
         </div>
         <div className="title">
           <p>
-            What is the new player's name? <input type="text"></input>
+            What is the new player's name?{" "}
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            ></input>
           </p>
         </div>
         <div className="body">
           <p>
             How many points per game did this player average for their career?{" "}
-            <input type="text"></input>
+            <input
+              type="text"
+              value={points}
+              onChange={(e) => setPoints(e.target.value)}
+            ></input>
           </p>
         </div>
         <div className="footer">
@@ -35,14 +46,22 @@ export function Modal({ closeModal }) {
           >
             Cancel
           </button>
-          <button>Continue</button>
+          <button
+            onClick={() => {
+              addPlayers(name, points);
+              closeModal(false);
+            }}
+          >
+            Continue
+          </button>
         </div>
       </div>
     </div>
   );
 }
 
-export function Removemodal({ closeModal, addPlayers }) {
+export function Removemodal({ closeModal, removePlayer }) {
+  const [name, setName] = useState("");
   return (
     <div className="modalbackground">
       <div className="modalContainer">
@@ -58,7 +77,12 @@ export function Removemodal({ closeModal, addPlayers }) {
         </div>
         <div className="title">
           <p>
-            What player do you want to remove?<input type="text"></input>
+            What player do you want to remove?
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            ></input>
           </p>
         </div>
         <div className="body"></div>
@@ -73,7 +97,8 @@ export function Removemodal({ closeModal, addPlayers }) {
           </button>
           <button
             onClick={() => {
-              addPlayers(false);
+              removePlayer(name);
+              closeModal(false);
             }}
           >
             Continue
