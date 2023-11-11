@@ -4,6 +4,7 @@ import "./modals.css";
 export function Modal({ closeModal, addPlayers }) {
   const [name, setName] = useState("");
   const [points, setPoints] = useState("");
+
   return (
     <div className="modalbackground">
       <div className="modalContainer">

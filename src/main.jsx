@@ -8,31 +8,17 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import { Kobe, LeBron, Jordan } from "./Componenets.jsx";
+import { Player } from "./Componenets.jsx";
 import playerData from "./playerData/Stats.js";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route
-        path="/kobebryant"
-        element={<Kobe />}
+        path="/player/:id"
+        element={<Player />}
         loader={(request) => {
           return playerData[2];
-        }}
-      />
-      <Route
-        path="/michaeljordan"
-        element={<Jordan />}
-        loader={(request) => {
-          return playerData[0];
-        }}
-      />
-      <Route
-        path="/lebronjames"
-        element={<LeBron />}
-        loader={(request) => {
-          return playerData[1];
         }}
       />
     </Route>

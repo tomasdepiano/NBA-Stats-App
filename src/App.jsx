@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import { Outlet, useNavigate } from "react-router-dom";
 import { Modal, Removemodal } from "./modals";
 import playerData from "./playerData/Stats";
-// import { log } from "console";
+import axios from "axios";
 
 function App() {
   const navigate = useNavigate();
@@ -16,12 +16,19 @@ function App() {
 
   const [openModal, setOpenModal] = useState(false);
   const [removeModal, setRemovalModal] = useState(false);
-  const [players, setPlayers] = useState(playerData);
+  const [players, setPlayers] = useState([]);
 
-  console.log(players);
+  useEffect(() => {
+    axios.get("/api/playerData").then((res) => {
+      setPlayers(res.data);
+    });
+  }, []);
 
-  function addNewPlayers(name, pts) {
-    setPlayers([...players, { name, pts }]);
+  async function addNewPlayers(name, pts) {
+    const res = await axios.post("/api/playerData", { name, pts });
+
+    setPlayers(res.data);
+    console.log(res.data);
   }
 
   function removePlayer(name) {
@@ -43,14 +50,15 @@ function App() {
             </h3>
             <select value={selectedPlayer} onChange={handleDropdownChange}>
               <option value="">Select an option</option>
-              <option value="kobebryant">Kobe Bryant</option>
-              <option value="michaeljordan">Michael Jordan</option>
-              <option value="lebronjames">LeBron James</option>
+
+              {players.map((player, index) => {
+                return <option value={index}>{player.name}</option>;
+              })}
             </select>
             <button
               onClick={(e) => {
                 e.preventDefault();
-                navigate(`/${selectedPlayer}`);
+                navigate(`/player/${selectedPlayer}`);
                 // console.log(selectedPlayer);
               }}
               type="submit"

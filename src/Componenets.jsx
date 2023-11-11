@@ -1,67 +1,41 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import "./app.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-export function Jordan() {
+export function Player() {
   const { name, pts, trb, ast, fgpercent, fg3point, freethrowpercent, champs } =
     useLoaderData();
+  const { id } = useParams();
+  // console.log(id);
+
+  const [player, setPlayer] = useState();
+
+  useEffect(() => {
+    axios.get(`/api/playerData/${id}`).then((res) => {
+      setPlayer(res.data);
+    });
+  }, []);
+
+  if (!player) {
+    return <div>Loading</div>;
+  }
   return (
     <div>
       <div className="jordanBackgroundImage">
-        <h2 style={{ color: "white" }}>Michael Jordan's Career Stats</h2>
-        <h2 style={{ color: "yellow" }}>{name}</h2>
-        <h3 style={{ color: "yellow" }}>Points Per Game: {pts}</h3>
-        <h3 style={{ color: "yellow" }}>Rebounds Per Game: {trb}</h3>
-        <h3 style={{ color: "yellow" }}>Assist Per Game: {ast}</h3>
-        <h3 style={{ color: "yellow" }}>FG Pecentage: {fgpercent}</h3>
-        <h3 style={{ color: "yellow" }}>3 Point FG Percentage: {fg3point}</h3>
+        <h2 style={{ color: "white" }}>{player.name} Career Stats</h2>
+        <h2 style={{ color: "yellow" }}>{player.name}</h2>
+        <h3 style={{ color: "yellow" }}>Points Per Game: {player.pts}</h3>
+        <h3 style={{ color: "yellow" }}>Rebounds Per Game: {player.trb}</h3>
+        <h3 style={{ color: "yellow" }}>Assist Per Game: {player.ast}</h3>
+        <h3 style={{ color: "yellow" }}>FG Pecentage: {player.fgpercent}</h3>
         <h3 style={{ color: "yellow" }}>
-          Free Throw Percentage: {freethrowpercent}
+          3 Point FG Percentage: {player.fg3point}
         </h3>
-        <h3 style={{ color: "yellow" }}>Championships: {champs}</h3>
-      </div>
-    </div>
-  );
-}
-
-export function LeBron() {
-  const { name, pts, trb, ast, fgpercent, fg3point, freethrowpercent, champs } =
-    useLoaderData();
-  return (
-    <div>
-      <div className="lebronBackgroundImage">
-        <h2 style={{ color: "yellow" }}>LeBron's Career Stats</h2>
-        <h3 style={{ color: "yellow" }}>{name}</h3>
-        <h3 style={{ color: "yellow" }}>Points Per Game: {pts}</h3>
-        <h3 style={{ color: "yellow" }}>Rebounds Per Game: {trb}</h3>
-        <h3 style={{ color: "yellow" }}>Assist Per Game: {ast}</h3>
-        <h3 style={{ color: "yellow" }}>FG Pecentage: {fgpercent}</h3>
-        <h3 style={{ color: "yellow" }}>3 Point FG Percentage: {fg3point}</h3>
         <h3 style={{ color: "yellow" }}>
-          Free Throw Percentage: {freethrowpercent}
+          Free Throw Percentage: {player.freethrowpercent}
         </h3>
-        <h3 style={{ color: "yellow" }}>Championships: {champs}</h3>
-      </div>
-    </div>
-  );
-}
-
-export function Kobe() {
-  const { name, pts, trb, ast, fgpercent, fg3point, freethrowpercent, champs } =
-    useLoaderData();
-  return (
-    <div>
-      <div className="kobeBackgroundImage">
-        <h2 style={{ color: "yellow" }}>Kobe's Career Stats</h2>
-        <h3 style={{ color: "yellow" }}>{name}</h3>
-        <h3 style={{ color: "yellow" }}>Points Per Game: {pts}</h3>
-        <h3 style={{ color: "yellow" }}>Rebounds Per Game: {trb}</h3>
-        <h3 style={{ color: "yellow" }}>Assist Per Game: {ast}</h3>
-        <h3 style={{ color: "yellow" }}>FG Pecentage: {fgpercent}</h3>
-        <h3 style={{ color: "yellow" }}>3 Point FG Percentage: {fg3point}</h3>
-        <h3 style={{ color: "yellow" }}>
-          Free Throw Percentage: {freethrowpercent}
-        </h3>
-        <h3 style={{ color: "yellow" }}>Championships: {champs}</h3>
+        <h3 style={{ color: "yellow" }}>Championships: {player.champs}</h3>
       </div>
     </div>
   );
