@@ -19,7 +19,7 @@
 }
 
 .jordanBackgroundImage {
-  background-image: url(https://img.bleacherreport.net/img/images/photos/002/936/935/hi-res-eeb229e296ddb701be5c889a1d693762_crop_north.jpg?1402782251&w=3072&h=2048);
+  background-image: url(https://media.istockphoto.com/id/1292401641/photo/orange-basketball-ball-on-wooden-parquet-close-up-image-of-basketball-ball-over-floor-in-the.jpg?s=612x612&w=0&k=20&c=Z1w1_emnpzTzuT1H-u6BP19YWaJMR8vXr6qtcXqbH0E=);
   height: 60vh;
   background-size: cover;
   width: 100vh;
@@ -27,7 +27,7 @@
   z-index: -1;
 }
 
-.lebronBackgroundImage {
+/* .lebronBackgroundImage {
   background-image: url(https://library.sportingnews.com/2021-08/lebron-james-dunks-against-the-houston-rockets_1dhr67o0nxqon1rrueli8yt3y9.jpg);
   height: 60vh;
   background-size: cover;
@@ -43,4 +43,4 @@
   width: 100vh;
   margin-bottom: 50px;
   z-index: -1;
-}
+} */

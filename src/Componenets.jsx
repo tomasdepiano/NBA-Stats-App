@@ -24,18 +24,18 @@ export function Player() {
     <div>
       <div className="jordanBackgroundImage">
         <h2 style={{ color: "white" }}>{player.name} Career Stats</h2>
-        <h2 style={{ color: "yellow" }}>{player.name}</h2>
-        <h3 style={{ color: "yellow" }}>Points Per Game: {player.pts}</h3>
-        <h3 style={{ color: "yellow" }}>Rebounds Per Game: {player.trb}</h3>
-        <h3 style={{ color: "yellow" }}>Assist Per Game: {player.ast}</h3>
-        <h3 style={{ color: "yellow" }}>FG Pecentage: {player.fgpercent}</h3>
-        <h3 style={{ color: "yellow" }}>
+        <h2 style={{ color: "white" }}>{player.name}</h2>
+        <h3 style={{ color: "white" }}>Points Per Game: {player.pts}</h3>
+        <h3 style={{ color: "white" }}>Rebounds Per Game: {player.trb}</h3>
+        <h3 style={{ color: "white" }}>Assist Per Game: {player.ast}</h3>
+        <h3 style={{ color: "white" }}>FG Pecentage: {player.fgpercent}</h3>
+        <h3 style={{ color: "white" }}>
           3 Point FG Percentage: {player.fg3point}
         </h3>
-        <h3 style={{ color: "yellow" }}>
+        <h3 style={{ color: "white" }}>
           Free Throw Percentage: {player.freethrowpercent}
         </h3>
-        <h3 style={{ color: "yellow" }}>Championships: {player.champs}</h3>
+        <h3 style={{ color: "white" }}>Championships: {player.champs}</h3>
       </div>
     </div>
   );
