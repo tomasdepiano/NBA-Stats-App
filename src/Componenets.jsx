@@ -22,7 +22,7 @@ export function Player() {
   }
   return (
     <div>
-      <div className="jordanBackgroundImage">
+      <div className="basketballBackgroundImage">
         <h2 style={{ color: "white" }}>{player.name} Career Stats</h2>
         <h2 style={{ color: "white" }}>{player.name}</h2>
         <h3 style={{ color: "white" }}>Points Per Game: {player.pts}</h3>

@@ -24,8 +24,26 @@ function App() {
     });
   }, []);
 
-  async function addNewPlayers(name, pts) {
-    const res = await axios.post("/api/playerData", { name, pts });
+  async function addNewPlayers(
+    name,
+    pts,
+    trb,
+    ast,
+    fgpercent,
+    fg3point,
+    freethrowpercent,
+    champs
+  ) {
+    const res = await axios.post("/api/playerData", {
+      name,
+      pts,
+      trb,
+      ast,
+      fgpercent,
+      fg3point,
+      freethrowpercent,
+      champs,
+    });
 
     setPlayers(res.data);
     console.log(res.data);

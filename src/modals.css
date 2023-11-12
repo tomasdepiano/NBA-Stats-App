@@ -23,7 +23,7 @@
   display: inline-block;
   text-align: center;
   margin-top: 10px;
-  font-size: 1.7rem;
+  font-size: 0.7rem;
 }
 
 .titleCloseBtn {
@@ -43,7 +43,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.7rem;
+  font-size: 0.5rem;
   text-align: center;
 }
 

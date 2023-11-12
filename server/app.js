@@ -62,11 +62,18 @@ app.get("/api/playerData/:id", (req, res) => {
 app.post("/api/playerData", (req, res) => {
   console.log(req.body);
 
-  const { name, pts } = req.body;
+  const { name, pts, trb, ast, fgpercent, fg3point, freethrowpercent, champs } =
+    req.body;
 
   const newPlayer = {
     name: name,
     pts: Number(pts),
+    trb: Number(trb),
+    ast: Number(ast),
+    fgpercent: Number(fgpercent),
+    fg3point: Number(fg3point),
+    freethrowpercent: Number(freethrowpercent),
+    champs: Number(champs),
   };
   playerData.push(newPlayer);
   res.json(playerData);
@@ -74,13 +81,26 @@ app.post("/api/playerData", (req, res) => {
 
 app.put("/api/playerData/:id", (req, res) => {
   const { id } = req.params;
-  const { name, pts } = req.body;
+  const { name, pts, trb, ast, fgpercent, fg3point, freethrowpercent, champs } =
+    req.body;
 
   const player = playerData[id];
 
   player.name = name || player.name;
 
   player.pts = Number(pts) || player.pts;
+
+  player.trb = Number(trb) || player.trb;
+
+  player.ast = Number(ast) || player.ast;
+
+  player.fgpercent = Number(fgpercent) || player.fgpercent;
+
+  player.fg3point = Number(fg3point) || player.fg3point;
+
+  player.freethrowpercent = Number(freethrowpercent) || player.freethrowpercent;
+
+  player.champs = Number(champs) || player.champs;
 
   res.json(player);
 });
